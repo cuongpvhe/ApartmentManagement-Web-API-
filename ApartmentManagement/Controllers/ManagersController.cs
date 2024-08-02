@@ -26,7 +26,7 @@ namespace ApartmentManagement.Controllers
         }
 
         [HttpPost("authenticate")]
-        public async Task<IActionResult> Authenticate([FromForm] Manager managerObj)
+        public async Task<IActionResult> Authenticate([FromBody] Manager managerObj)
         {
             if (managerObj == null)
                 return BadRequest();
