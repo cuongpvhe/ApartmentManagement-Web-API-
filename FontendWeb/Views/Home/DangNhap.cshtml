@@ -34,18 +34,10 @@
             <div class="form-group">
                 <button class="btn btn-lg btn-primary btn-block" type="submit">Đăng nhập</button>
             </div><!-- /.form-group -->
-            <!-- .form-group -->
-            <div class="form-group text-center">
-                <div class="custom-control custom-control-inline custom-checkbox">
-                    <input type="checkbox" class="custom-control-input" id="remember-me">
-                    <label class="custom-control-label" for="remember-me">Keep me sign in</label>
-                </div>
-            </div><!-- /.form-group -->
+            
             <!-- recovery links -->
             <div class="text-center pt-3">
-                <a href="auth-recovery-username.html" class="link">Quên tài khoản?</a>
-                <span class="mx-2">·</span>
-                <a href="auth-recovery-password.html" class="link">Quên mật khẩu?</a>
+                <a class="nav-link py-2" href="@Url.Action("ForgotPassword", "Home")">Quên mật khẩu?</a>
             </div><!-- /recovery links -->
             <div class="form-group text-center mt-3">
                 <p>Chưa có tài khoản? <a href="/Home/DangKy">Đăng ký</a></p>
