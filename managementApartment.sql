@@ -189,3 +189,5 @@ INSERT INTO Payments (PaymentID, ServiceID, RoomID, PaymentDate, Amount, Payment
 INSERT INTO Payments (PaymentID, ServiceID, RoomID, PaymentDate, Amount, PaymentType, CreateDate) VALUES (7, 3, 1, '2023-02-01', 200000, 'Internet', null);
 INSERT INTO Payments (PaymentID, ServiceID, RoomID, PaymentDate, Amount, PaymentType, CreateDate) VALUES (8, 3, 2, '2023-02-01', 200000, 'Internet', null);
 SET IDENTITY_INSERT Payments OFF
+ALTER TABLE Managers
+ALTER COLUMN Password NVARCHAR(255);
