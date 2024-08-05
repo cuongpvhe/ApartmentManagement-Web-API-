@@ -108,7 +108,7 @@ namespace ApartmentManagement.Models
 
                 entity.Property(e => e.FullName).HasMaxLength(100);
 
-                entity.Property(e => e.Password).HasMaxLength(20);
+                entity.Property(e => e.Password).HasMaxLength(255);
 
                 entity.Property(e => e.PhoneNumber).HasMaxLength(10);
 
