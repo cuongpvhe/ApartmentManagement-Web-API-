@@ -13,12 +13,16 @@ CREATE TABLE Managers (
     ManagerID INT IDENTITY(1,1) PRIMARY KEY NOT NULL,
     FullName NVARCHAR(100) NULL,
 	Username NVARCHAR(100) NULL,
-    Password NVARCHAR(20) NULL,
+    Password NVARCHAR(255) NULL,
 	Role INT NOT NULL DEFAULT 2,
     Address NVARCHAR(255),
     PhoneNumber NVARCHAR(10) NULL,
     Email NVARCHAR(100) NULL,
 	Token NVARCHAR(100) NULL,
+	RefreshToken NVARCHAR(100) NULL,
+	RefreshTokenExpiryTime DATE NULL,
+	ResetPasswordToken NVARCHAR(255) NULL,
+	ResetPasswordExpiry DATE NULL,
 	CreateDate DATE NULL,
     UpdateDate DATE NULL,
 	Status bit NOT NULL DEFAULT 1,
@@ -189,5 +193,3 @@ INSERT INTO Payments (PaymentID, ServiceID, RoomID, PaymentDate, Amount, Payment
 INSERT INTO Payments (PaymentID, ServiceID, RoomID, PaymentDate, Amount, PaymentType, CreateDate) VALUES (7, 3, 1, '2023-02-01', 200000, 'Internet', null);
 INSERT INTO Payments (PaymentID, ServiceID, RoomID, PaymentDate, Amount, PaymentType, CreateDate) VALUES (8, 3, 2, '2023-02-01', 200000, 'Internet', null);
 SET IDENTITY_INSERT Payments OFF
-ALTER TABLE Managers
-ALTER COLUMN Password NVARCHAR(255);
