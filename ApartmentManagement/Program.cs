@@ -11,6 +11,7 @@ using System.Text;
 using ApartmentManagement.UtilityService;
 
 var builder = WebApplication.CreateBuilder(args);
+
 // Add session support
 builder.Services.AddDistributedMemoryCache();
 builder.Services.AddSession(options =>
@@ -30,7 +31,7 @@ builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
 builder.Services.AddScoped<IEmailService, EmailService>();
- 
+
 builder.Services.AddAuthentication(x =>
 {
     x.DefaultAuthenticateScheme = JwtBearerDefaults.AuthenticationScheme;
@@ -45,7 +46,7 @@ builder.Services.AddAuthentication(x =>
         IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes("veryverysceret.......")),
         ValidateAudience = false,
         ValidateIssuer = false,
-        ClockSkew = TimeSpan.Zero  
+        ClockSkew = TimeSpan.Zero
     };
 });
 
@@ -68,8 +69,8 @@ if (app.Environment.IsDevelopment())
 app.UseSession();
 app.UseHttpsRedirection();
 app.UseCors("AllowAll");
-app.UseAuthorization();
 app.UseAuthentication();
+app.UseAuthorization();
 app.MapControllers();
 
 app.Run();
