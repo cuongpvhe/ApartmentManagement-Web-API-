@@ -47,7 +47,7 @@ const Register = () => {
           <label>Email:</label>
           <input type="email" value={email} onChange={(e) => setEmail(e.target.value)} />
         </div>
-        <button type="submit">Register</button>
+        <button type="submit">Registers</button>
       </form>
       {error && <p>{error}</p>}
     </div>
